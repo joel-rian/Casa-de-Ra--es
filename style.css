@@ -374,26 +374,33 @@ video {
     right: 10px;
 }
 
-/* Responsive */
-
+/* RESPONSIVIDADE - até 900px */
 @media (max-width: 900px) {
 
-  /* não vou esconder todos os <p> como no código 1
-     senão some muito conteúdo da landing.
-     Se quiser, podemos esconder só alguns depois. */
+  /* Se quiser esconder todos os <p> como no código 1, libera essa linha:
+  p {
+    display: none;
+  }
+  */
 
-  /* container geral ocupa tela toda e reduz margens */
+  /* container geral ocupa tela quase toda e com menos margem */
   .container {
     margin: 16px auto;
     padding: 16px;
   }
 
-  /* header empilha e centraliza */
+  /* HEADER parecido com o código 1: centralizado e empilhado */
   header {
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 10px;
     text-align: center;
+    font-size: 10px; /* igual código 1 */
+  }
+
+  .brand {
+    justify-content: center;
   }
 
   nav {
@@ -405,11 +412,37 @@ video {
     text-align: center;
   }
 
-  /* hero empilhado: texto em cima, form embaixo */
+  /* HERO: coluna (texto em cima, formulário embaixo) */
   .hero {
     flex-direction: column;
     gap: 24px;
     margin: 24px 12px;
+  }
+
+  .hero-content {
+    position: static;      /* remove o fixed do desktop */
+    bottom: auto;
+    left: auto;
+    max-width: 100%;
+  }
+
+  .h1 {
+    font-size: 22px;
+  }
+
+  .lead {
+    text-align: left;
+  }
+
+  /* CARD DO FORMULÁRIO: entra no fluxo normal e fica centralizado */
+  .caixa-from-form {
+    position: static;      /* tira o absolute do desktop */
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 480px;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .hero-card {
@@ -418,24 +451,14 @@ video {
     margin: 0 auto;
   }
 
-  /* form deixa de ser absoluto e entra no fluxo normal */
-  .caixa-from-form {
-    position: static;
-    top: auto;
-    right: auto;
-    width: 100%;
-    justify-content: center;
-    margin-top: 8px;
-  }
-
-  .contact-info,
-  .lead {
+  .contact-info {
     text-align: left;
   }
 
-  /* footer empilhado */
+  /* FOOTER: empilhado, como no código 1 */
   footer {
     flex-direction: column;
+    align-items: center;
     gap: 8px;
     text-align: center;
   }
@@ -444,12 +467,20 @@ video {
     text-align: center;
   }
 
-  /* botão ocupa largura maior no mobile */
+  /* BOTÕES ocupam a largura toda no mobile */
   .clickstyle906,
   .cta.submit-btn,
   button.cta {
     width: 100%;
     text-align: center;
     justify-content: center;
+    display: inline-flex;
   }
-}
+
+  /* BOTÃO DO WHATSAPP um pouco maior e com mais respiro */
+  .callWhatsapp {
+    width: 56px;
+    bottom: 16px;
+    right: 16px;
+  }
+}  
