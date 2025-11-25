@@ -13,8 +13,7 @@
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--dark);
+ 
   -webkit-font-smoothing: antialiased;
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   width: 100%;
@@ -376,11 +375,7 @@ video {
     right: 10px;
     z-index: 4;
 }
- background-image {
-  overflow: hidden;
- }
-
-
+ 
 body {
 
      
