@@ -13,7 +13,8 @@
 
 body {
   margin: 0;
- 
+  background: var(--bg);
+  color: var(--dark);
   -webkit-font-smoothing: antialiased;
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   width: 100%;
@@ -376,25 +377,8 @@ video {
     z-index: 4;
 }
  
-body {
 
-     
-    /* 1. Aplica a imagem de fundo */
-    background-image: url('./img/pets.jpg') ; 
-    
-    /* 2. Garante que a imagem cubra toda a tela */
-    background-size: cover; 
-    
-    /* 3. Centraliza a imagem */
-    background-position: center center; 
-    
-    /* 4. A CHAVE: background-attachment: fixed */
-    /* Isso funciona perfeitamente em desktop e é a forma correta de fixar o fundo */
-    background-attachment: fixed; 
-    
-    /* 5. Evita que a imagem se repita */
-   
-}
+
 
 /* CORREÇÃO ESPECÍFICA PARA MOBILE (iOS/Safari) */
 /* Adicione este bloco no final do seu CSS */
@@ -409,7 +393,7 @@ body {
 
 
 @media (min-width: 900px) {
-  .imgport {
+  .pets {
     display: none;
   }
 
@@ -418,11 +402,16 @@ body {
 /* RESPONSIVIDADE - até 900px */
 @media (max-width: 900px) {
 
-  /* Se quiser esconder todos os <p> como no código 1, libera essa linha:
-  p {
-    display: none;
-  }
-  */
+  .pets {
+    width: 100%;
+    height: 100%;
+    position: fixed; /* <--- O PROBLEMA ESTÁ AQUI */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-attachment: fixed; 
+    
+}
 
   /* container geral ocupa tela quase toda e com menos margem */
   .container {
