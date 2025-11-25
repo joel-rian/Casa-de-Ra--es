@@ -110,7 +110,7 @@ nav {
 .hero-content {
     display: flex;
     position: fixed;
-    bottom: 50px;
+    top: 200px;
     flex-direction: column;
     left: 30px;
     
@@ -240,7 +240,7 @@ footer {
   margin-top: 32px;
   padding: 18px;
   border-radius: 12px;
-  background: linear-gradient(180deg, #FFFFFF, #0000ff);
+  background: linear-gradient(180deg, #000000, #0000ff);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -253,7 +253,7 @@ footer {
 .footer-right {
   text-align: right;
   font-size: 13px;
-  color: white;
+  color: rgb(145, 145, 145);
 }
 
 .footer-support {
@@ -381,7 +381,7 @@ video {
 
 body {
     /* 1. Aplica a imagem de fundo */
-    background-image: url('./coelho.jpg'); 
+    background-image: url('./img/pets.jpg'); 
     
     /* 2. Garante que a imagem cubra toda a tela */
     background-size: cover; 
