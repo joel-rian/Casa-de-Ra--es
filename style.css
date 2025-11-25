@@ -376,14 +376,16 @@ video {
     right: 10px;
     z-index: 4;
 }
-
+ background-image {
+  overflow: hidden;
+ }
 
 
 body {
 
-    
+     
     /* 1. Aplica a imagem de fundo */
-    background-image: url('./img/pets.jpg'); 
+    background-image: url('./img/pets.jpg') ; 
     
     /* 2. Garante que a imagem cubra toda a tela */
     background-size: cover; 
