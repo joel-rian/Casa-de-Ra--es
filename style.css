@@ -377,9 +377,11 @@ video {
     z-index: 4;
 }
 
-/* NOVO BLOCO CSS (APLICAR FORA DAS MEDIA QUERIES) */
+
 
 body {
+
+    
     /* 1. Aplica a imagem de fundo */
     background-image: url('./img/pets.jpg'); 
     
@@ -394,7 +396,7 @@ body {
     background-attachment: fixed; 
     
     /* 5. Evita que a imagem se repita */
-    background-repeat: no-repeat;
+   
 }
 
 /* CORREÇÃO ESPECÍFICA PARA MOBILE (iOS/Safari) */
