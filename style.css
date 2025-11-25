@@ -483,4 +483,10 @@ video {
     bottom: 16px;
     right: 16px;
   }
+
+.videoport {
+display: none;
+
+}
+
 }  
