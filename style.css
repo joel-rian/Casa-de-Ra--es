@@ -376,6 +376,39 @@ video {
     right: 10px;
     z-index: 4;
 }
+
+/* NOVO BLOCO CSS (APLICAR FORA DAS MEDIA QUERIES) */
+
+body {
+    /* 1. Aplica a imagem de fundo */
+    background-image: url('./coelho.jpg'); 
+    
+    /* 2. Garante que a imagem cubra toda a tela */
+    background-size: cover; 
+    
+    /* 3. Centraliza a imagem */
+    background-position: center center; 
+    
+    /* 4. A CHAVE: background-attachment: fixed */
+    /* Isso funciona perfeitamente em desktop e é a forma correta de fixar o fundo */
+    background-attachment: fixed; 
+    
+    /* 5. Evita que a imagem se repita */
+    background-repeat: no-repeat;
+}
+
+/* CORREÇÃO ESPECÍFICA PARA MOBILE (iOS/Safari) */
+/* Adicione este bloco no final do seu CSS */
+@media (max-width: 900px) {
+    /* ... suas outras configurações de mobile ... */
+    
+    /* Opcional, mas recomendado para melhorar a rolagem no iOS */
+    body {
+        -webkit-overflow-scrolling: touch; 
+    }
+}
+
+
 @media (min-width: 900px) {
   .imgport {
     display: none;
