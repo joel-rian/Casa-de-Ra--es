@@ -1,4 +1,4 @@
-[REAME.md](https://github.com/user-attachments/files/23840849/REAME.md)
+
 # 🚀 Website Comercial Otimizado: Casa de Rações
 
 ## Descrição do Projeto
