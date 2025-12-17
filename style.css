@@ -1,65 +1,70 @@
-/* RESET */
+:root {
+  --accent: #FF7A59; /* laranja */
+  --dark: #b4fef8;
+  --muted: #79927d;
+  --bg: #acd5ff;
+  --card: #180081;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  color: #fff;
-  background: #000;
-}
-
-/* VÍDEO DE FUNDO */
-.bg-video {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-}
-
-.bg-video video {
+  margin: 0;
+  background: var(--bg);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  z-index: -1;
-}
-
-/* CONTAINER */
 .container {
-  max-width: 1200px;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  margin: 40px auto;
   padding: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
-/* HEADER */
-.site-header {
+/* Header */
+header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 60px;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .brand {
   display: flex;
-  gap: 12px;
   align-items: center;
+  gap: 12px;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border-radius: 12px;
-  background: #ff7a59;
-  display: grid;
-  place-items: center;
+  background: linear-gradient(135deg, var(--accent), #363dff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
   font-weight: 700;
+}
+
+.brand-title {
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 13px;
+  color: white;
 }
 
 nav {
@@ -68,93 +73,459 @@ nav {
 }
 
 .pill {
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  border: 1px solid rgba(15, 23, 36, 0.06);
+  font-size: 14px;
 }
 
-/* HERO */
+/* Hero */
 .hero {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 420px;
-  gap: 40px;
-  align-items: start;
+  gap: 300px;
+  margin-top: 28px;
+ margin: 50px;
+  align-items: center;
+  
 }
 
-.card {
-  background: linear-gradient(135deg, #ff7a59, #363dff);
+.hero-card {
+    width: 500px;
+   background: linear-gradient(135deg, var(--accent), #363dff, black);
   padding: 28px;
   border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 255, 17, 0.06);
 }
 
-/* TEXTO */
-.hero-text h1 {
-  font-size: 32px;
-  margin-bottom: 16px;
+.caixa-from-form {
+    display: flex;
+    position: absolute;
+    top: 200px;
+    right: 50px;
+    width: 300px;
 }
 
-.hero-text p {
-  margin-bottom: 20px;
+.hero-content {
+    display: flex;
+    position: fixed;
+    top: 200px;
+    flex-direction: column;
+    left: 30px;
+    
 }
 
-.features {
+.h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.lead {
+  color: white;
+  margin: 0 0 18px;
+}
+
+ul.features {
+  padding: 0;
+  margin: 18px 0 22px;
   list-style: none;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.features li {
-  margin-bottom: 8px;
+ul.features li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.check {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  color: #059669;
+  font-weight: 700;
+}
+
+.muted {
+  color: #000000;
+}
+
+.small {
+  font-size: 13px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #E6EEF7;
+  font-size: 15px;
+}
+
+button.cta {
+  background: var(--accent);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.cta:hover {
+  opacity: 0.95;
+}
+
+.note {
+  font-size: 13px;
+  color: white;
 }
 
 .trust {
   display: flex;
-  gap: 16px;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.pill-small {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #000000;
+  font-size: 13px;
+}
+
+.contact-info {
+  margin-top: 18px;
+  font-size: 14px;
+  color: white;
+}
+
+.form-title {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.form-msg {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: green;
+}
+
+.form-footer {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Footer */
+footer {
+  margin-top: 32px;
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #000000, #0000ff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
   font-size: 14px;
 }
 
-/* FORM */
-.hero-form input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  border: none;
+.footer-right {
+  text-align: right;
+  font-size: 13px;
+  color: rgb(145, 145, 145);
 }
 
-.btn {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  background: #000;
-  color: #fff;
+.footer-support {
+  margin-top: 6px;
+}
+
+ .caixa-video {
+    position: fixed;
+    top: 0;
+    z-index: -2;
+    left: 0;
+}
+
+.mascara {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    position: fixed;
+    top: 0;
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+}
+
+
+
+.pill {
+    color: white;
+}
+
+/* Botão principal */
+.cta.submit-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
   font-weight: 600;
+  font-size: 16px;
+  background: linear-gradient(90deg, #FF7A59, #FF9E80);
+  color: #fff;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  overflow: hidden;
+}
+
+.clickstyle906 {
+  position: relative;
+  display: inline-block;
+  padding: 12px 22px;
+  background: #680085;      /* $btn-color */
+  border: 1px solid #ff00bf;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;       /* era $border-radius, escolhi 6px */
+  overflow: hidden;
   cursor: pointer;
 }
 
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
+/* linha embaixo que cresce no hover */
+.clickstyle906::before {
+  width: 0;
+  height: 4.5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ff00bf;
+  transition: all 0.35s;
+  content: "";
+  z-index: 2;
 }
 
-.whatsapp img {
-  width: 56px;
+/* camada que desliza de cima com o texto data-hover */
+.clickstyle906::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 6px;       /* mesmo valor do botão */
+  background-color: #0008ff; /* $btn-hover-color */
+  transform: translate(0, -100%);
+  transition: all 0.35s;
+  content: attr(data-hover);
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* RESPONSIVO */
+/* texto original precisa ficar acima do ::after */
+.clickstyle906 {
+  position: relative;
+  z-index: 3;
+}
+
+/* hover: anima linha e desce o "data-hover" */
+.clickstyle906:hover::before {
+  width: 100%;
+}
+
+.clickstyle906:hover::after {
+  transform: translate(0, 0);
+}
+
+.callWhatsapp {
+    width: 50px;
+    height: auto;
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 4;
+}
+ 
+
+
+
+/* CORREÇÃO ESPECÍFICA PARA MOBILE (iOS/Safari) */
+/* Adicione este bloco no final do seu CSS */
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
+    /* ... suas outras configurações de mobile ... */
+    
+    /* Opcional, mas recomendado para melhorar a rolagem no iOS */
+    body {
+        -webkit-overflow-scrolling: touch; 
+    }
+}
 
-  nav {
+
+@media (min-width: 900px) {
+  .pets {
     display: none;
   }
 
-  .site-header {
-    flex-direction: column;
-    gap: 20px;
-  }
 }
+
+/* RESPONSIVIDADE - até 900px */
+@media (max-width: 900px) {
+
+  .pets {
+    width: 100%;
+    height: 100%;
+    position: fixed; /* <--- O PROBLEMA ESTÁ AQUI */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-attachment: fixed; 
+    
+}
+
+  /* container geral ocupa tela quase toda e com menos margem */
+  .container {
+    margin: 16px auto;
+    padding: 16px;
+  }
+
+  /* HEADER parecido com o código 1: centralizado e empilhado */
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    font-size: 10px; /* igual código 1 */
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand-subtitle {
+    text-align: center;
+  }
+
+  /* HERO: coluna (texto em cima, formulário embaixo) */
+  .hero {
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px 12px;
+  }
+
+  .hero-content {
+    position: static;      /* remove o fixed do desktop */
+    bottom: auto;
+    left: auto;
+    max-width: 100%;
+  }
+
+  .h1 {
+    font-size: 22px;
+  }
+
+  .lead {
+    text-align: left;
+  }
+
+  /* CARD DO FORMULÁRIO: entra no fluxo normal e fica centralizado */
+  .caixa-from-form {
+    position: static;      /* tira o absolute do desktop */
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 480px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    text-align: left;
+  }
+
+  /* FOOTER: empilhado, como no código 1 */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+
+  /* BOTÕES ocupam a largura toda no mobile */
+  .clickstyle906,
+  .cta.submit-btn,
+  button.cta {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+  }
+
+  /* BOTÃO DO WHATSAPP um pouco maior e com mais respiro */
+  .callWhatsapp {
+    width: 56px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+.videoport {
+display: none;
+
+}
+
+.imgport {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+}  
