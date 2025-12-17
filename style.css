@@ -1,38 +1,55 @@
+/* ============================================================
+   VARIÁVEIS & CONFIGURAÇÕES GLOBAIS
+============================================================ */
 :root {
-  --accent: #FF7A59; /* laranja */
+  --accent: #FF7A59;
   --dark: #b4fef8;
   --muted: #79927d;
   --bg: #acd5ff;
   --card: #180081;
-  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial;
 }
 
+/* ============================================================
+   RESET & BASE
+============================================================ */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--dark);
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   width: 100%;
   height: 100%;
-  
+
+  background: var(--bg);
+  color: var(--dark);
+
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial;
+
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ============================================================
+   CONTAINER
+============================================================ */
 .container {
   width: 100%;
   height: 100%;
   margin: 40px auto;
   padding: 24px;
-  justify-content: center;
-  align-items: center;
+
+  display: flex;
+  flex-direction: column;
   gap: 50px;
 }
 
-/* Header */
+/* ============================================================
+   HEADER
+============================================================ */
 header {
   display: flex;
   align-items: center;
@@ -50,11 +67,13 @@ header {
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent), #363dff);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(255, 255, 255);
+
+  background: linear-gradient(135deg, var(--accent), #363dff);
+  color: #fff;
   font-weight: 700;
 }
 
@@ -64,7 +83,7 @@ header {
 
 .brand-subtitle {
   font-size: 13px;
-  color: white;
+  color: #fff;
 }
 
 nav {
@@ -75,92 +94,105 @@ nav {
 .pill {
   padding: 8px 12px;
   border-radius: 999px;
+
   background: transparent;
   border: 1px solid rgba(15, 23, 36, 0.06);
+
   font-size: 14px;
+  color: #fff;
 }
 
-/* Hero */
+/* ============================================================
+   HERO / LAYOUT PRINCIPAL
+============================================================ */
 .hero {
   display: flex;
-  grid-template-columns: 1fr 420px;
-  gap: 300px;
-  margin-top: 28px;
- margin: 50px;
   align-items: center;
-  
+  gap: 300px;
+  margin: 50px;
+}
+
+.hero-content {
+  position: fixed;
+  top: 200px;
+  left: 30px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-card {
-    width: 500px;
-   background: linear-gradient(135deg, var(--accent), #363dff, black);
+  width: 500px;
   padding: 28px;
+
+  background: linear-gradient(135deg, var(--accent), #363dff, #000);
   border-radius: 16px;
+
   box-shadow: 0 6px 30px rgba(0, 255, 17, 0.06);
 }
 
 .caixa-from-form {
-    display: flex;
-    position: absolute;
-    top: 200px;
-    right: 50px;
-    width: 300px;
+  position: absolute;
+  top: 200px;
+  right: 50px;
+
+  display: flex;
+  width: 300px;
 }
 
-.hero-content {
-    display: flex;
-    position: fixed;
-    top: 200px;
-    flex-direction: column;
-    left: 30px;
-    
-}
-
+/* ============================================================
+   TEXTO & LISTAS
+============================================================ */
 .h1 {
   font-size: 28px;
   margin: 0 0 8px;
 }
 
 .lead {
-  color: white;
   margin: 0 0 18px;
+  color: #fff;
 }
 
-ul.features {
+.features {
+  list-style: none;
   padding: 0;
   margin: 18px 0 22px;
-  list-style: none;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-ul.features li {
+.features li {
   display: flex;
-  gap: 12px;
   align-items: center;
+  gap: 12px;
 }
 
 .check {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: #ffffff;
+
   display: grid;
   place-items: center;
+
+  background: #fff;
   color: #059669;
   font-weight: 700;
 }
 
 .muted {
-  color: #000000;
+  color: #000;
 }
 
 .small {
   font-size: 13px;
 }
 
-/* Form */
+/* ============================================================
+   FORMULÁRIO
+============================================================ */
 form {
   display: flex;
   flex-direction: column;
@@ -172,19 +204,23 @@ input[type="email"],
 input[type="tel"] {
   width: 100%;
   padding: 12px;
+
   border-radius: 10px;
   border: 1px solid #E6EEF7;
+
   font-size: 15px;
 }
 
 button.cta {
-  background: var(--accent);
-  color: white;
   padding: 12px;
   border-radius: 10px;
   border: 0;
-  font-weight: 600;
+
+  background: var(--accent);
+  color: #fff;
+
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -194,32 +230,11 @@ button.cta:hover {
 
 .note {
   font-size: 13px;
-  color: white;
-}
-
-.trust {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-top: 12px;
-}
-
-.pill-small {
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: #000000;
-  font-size: 13px;
-}
-
-.contact-info {
-  margin-top: 18px;
-  font-size: 14px;
-  color: white;
+  color: #fff;
 }
 
 .form-title {
-  margin-top: 0;
-  margin-bottom: 6px;
+  margin: 0 0 6px;
 }
 
 .form-msg {
@@ -235,15 +250,42 @@ button.cta:hover {
   color: var(--muted);
 }
 
-/* Footer */
+/* ============================================================
+   PROVA SOCIAL
+============================================================ */
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pill-small {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #000;
+  font-size: 13px;
+}
+
+.contact-info {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
 footer {
   margin-top: 32px;
   padding: 18px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, #000000, #0000ff);
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  border-radius: 12px;
+  background: linear-gradient(180deg, #000, #0000ff);
 }
 
 .footer-left {
@@ -251,198 +293,170 @@ footer {
 }
 
 .footer-right {
-  text-align: right;
   font-size: 13px;
   color: rgb(145, 145, 145);
+  text-align: right;
 }
 
 .footer-support {
   margin-top: 6px;
 }
 
- .caixa-video {
-    position: fixed;
-    top: 0;
-    z-index: -2;
-    left: 0;
-}
-
-.mascara {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
-    position: fixed;
-    top: 0;
+/* ============================================================
+   VÍDEO DE FUNDO
+============================================================ */
+.caixa-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
 }
 
 video {
-    min-width: 100%;
-    min-height: 100%;
-    position: fixed;
-    top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
 }
 
+.mascara {
+  position: fixed;
+  top: 0;
 
+  width: 100%;
+  height: 100%;
 
-.pill {
-    color: white;
+  background: linear-gradient(
+    109deg,
+    rgba(10, 12, 16, 0.99) 15%,
+    rgba(10, 12, 16, 0.7) 50%,
+    rgba(10, 12, 16, 0.99) 85%
+  );
 }
 
-/* Botão principal */
+/* ============================================================
+   BOTÕES ESPECIAIS
+============================================================ */
 .cta.submit-btn {
-  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 20px;
+
   padding: 12px 18px;
   border-radius: 10px;
   border: 0;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 16px;
+
   background: linear-gradient(90deg, #FF7A59, #FF9E80);
   color: #fff;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
   transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-  overflow: hidden;
 }
 
 .clickstyle906 {
   position: relative;
   display: inline-block;
+
   padding: 12px 22px;
-  background: #680085;      /* $btn-color */
+  background: #680085;
   border: 1px solid #ff00bf;
+
   color: #fff;
-  text-decoration: none;
   font-weight: 600;
-  border-radius: 6px;       /* era $border-radius, escolhi 6px */
-  overflow: hidden;
+  border-radius: 6px;
   cursor: pointer;
+  overflow: hidden;
 }
 
-/* linha embaixo que cresce no hover */
+/* Linha inferior */
 .clickstyle906::before {
-  width: 0;
-  height: 4.5px;
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
+
+  width: 0;
+  height: 4.5px;
+
   background-color: #ff00bf;
-  transition: all 0.35s;
-  content: "";
+  transition: 0.35s;
   z-index: 2;
 }
 
-/* camada que desliza de cima com o texto data-hover */
+/* Overlay hover */
 .clickstyle906::after {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 6px;       /* mesmo valor do botão */
-  background-color: #0008ff; /* $btn-hover-color */
-  transform: translate(0, -100%);
-  transition: all 0.35s;
   content: attr(data-hover);
-  z-index: 1;
+  position: absolute;
+  inset: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #0008ff;
+  border-radius: 6px;
+
+  transform: translateY(-100%);
+  transition: 0.35s;
+  z-index: 1;
 }
 
-/* texto original precisa ficar acima do ::after */
-.clickstyle906 {
-  position: relative;
-  z-index: 3;
-}
-
-/* hover: anima linha e desce o "data-hover" */
 .clickstyle906:hover::before {
   width: 100%;
 }
 
 .clickstyle906:hover::after {
-  transform: translate(0, 0);
+  transform: translateY(0);
 }
 
+/* ============================================================
+   WHATSAPP
+============================================================ */
 .callWhatsapp {
-    width: 50px;
-    height: auto;
-    display: flex;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 4;
+  width: 50px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 4;
 }
- 
 
-
-
-/* CORREÇÃO ESPECÍFICA PARA MOBILE (iOS/Safari) */
-/* Adicione este bloco no final do seu CSS */
+/* ============================================================
+   RESPONSIVIDADE
+============================================================ */
 @media (max-width: 900px) {
-    /* ... suas outras configurações de mobile ... */
-    
-    /* Opcional, mas recomendado para melhorar a rolagem no iOS */
-    body {
-        -webkit-overflow-scrolling: touch; 
-    }
-}
 
-
-@media (min-width: 900px) {
-  .pets {
-    display: none;
+  body {
+    -webkit-overflow-scrolling: touch;
   }
 
-}
-
-/* RESPONSIVIDADE - até 900px */
-@media (max-width: 900px) {
-
   .pets {
+    position: fixed;
+    inset: 0;
     width: 100%;
     height: 100%;
-    position: fixed; /* <--- O PROBLEMA ESTÁ AQUI */
-    top: 0;
-    left: 0;
     z-index: -1;
-    background-attachment: fixed; 
-    
-}
+  }
 
-  /* container geral ocupa tela quase toda e com menos margem */
   .container {
     margin: 16px auto;
     padding: 16px;
   }
 
-  /* HEADER parecido com o código 1: centralizado e empilhado */
   header {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
     text-align: center;
-    font-size: 10px; /* igual código 1 */
-  }
-
-  .brand {
-    justify-content: center;
+    gap: 10px;
+    font-size: 10px;
   }
 
   nav {
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
-  .brand-subtitle {
-    text-align: center;
-  }
-
-  /* HERO: coluna (texto em cima, formulário embaixo) */
   .hero {
     flex-direction: column;
     gap: 24px;
@@ -450,28 +464,17 @@ video {
   }
 
   .hero-content {
-    position: static;      /* remove o fixed do desktop */
-    bottom: auto;
-    left: auto;
-    max-width: 100%;
+    position: static;
   }
 
   .h1 {
     font-size: 22px;
   }
 
-  .lead {
-    text-align: left;
-  }
-
-  /* CARD DO FORMULÁRIO: entra no fluxo normal e fica centralizado */
   .caixa-from-form {
-    position: static;      /* tira o absolute do desktop */
-    top: auto;
-    right: auto;
+    position: static;
     width: 100%;
     max-width: 480px;
-    justify-content: center;
     margin: 0 auto;
   }
 
@@ -481,14 +484,8 @@ video {
     margin: 0 auto;
   }
 
-  .contact-info {
-    text-align: left;
-  }
-
-  /* FOOTER: empilhado, como no código 1 */
   footer {
     flex-direction: column;
-    align-items: center;
     gap: 8px;
     text-align: center;
   }
@@ -497,35 +494,26 @@ video {
     text-align: center;
   }
 
-  /* BOTÕES ocupam a largura toda no mobile */
   .clickstyle906,
   .cta.submit-btn,
   button.cta {
     width: 100%;
-    text-align: center;
     justify-content: center;
-    display: inline-flex;
   }
 
-  /* BOTÃO DO WHATSAPP um pouco maior e com mais respiro */
   .callWhatsapp {
     width: 56px;
     bottom: 16px;
     right: 16px;
   }
 
-.videoport {
-display: none;
-
+  .videoport {
+    display: none;
+  }
 }
 
-.imgport {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+@media (min-width: 900px) {
+  .pets {
+    display: none;
+  }
 }
-
-}  
